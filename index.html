@@ -1,5 +1,47 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Goal Lit</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#B85635">
-<link rel="stylesheet" href="app.css"></head><body>
-<header><h1>Goal Lit</h1></header><main id="list" aria-live="polite">불러오는 중…</main>
-<script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#B85635">
+  <meta name="description" content="Goal Lit의 글과 작품을 한곳에서 만나보세요.">
+  <title>Goal Lit · 글과 작품</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">목록으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="header-inner"><h1>Goal Lit<span class="brand-dot" aria-hidden="true">.</span></h1><span class="header-note">글과 작품 사이</span></div>
+  </header>
+  <main id="main">
+    <section class="intro" aria-labelledby="intro-title">
+      <p class="eyebrow">작품을 읽는 또 하나의 시선</p>
+      <h2 id="intro-title">글을 따라,<br>작품을 만나다.</h2>
+      <p>마음에 남는 이야기를 찾아보세요.<br>글 전문은 원문 사이트에서 이어 읽을 수 있어요.</p>
+    </section>
+    <div class="connection-bar">
+      <p id="status" role="status">목록을 불러오는 중이에요.</p>
+      <button id="refresh" type="button" disabled>새로고침 <span aria-hidden="true">↻</span></button>
+    </div>
+    <div class="tabs" role="tablist" aria-label="목록 선택">
+      <button id="posts-tab" type="button" role="tab" aria-selected="true" aria-controls="posts-panel">글 <span id="posts-count"></span></button>
+      <button id="works-tab" type="button" role="tab" aria-selected="false" aria-controls="works-panel" tabindex="-1">작품 <span id="works-count"></span></button>
+    </div>
+    <section id="posts-panel" role="tabpanel" aria-labelledby="posts-tab" tabindex="0" aria-busy="true">
+      <div class="list-heading"><h2>모든 글</h2><span>원문으로 이어지는 이야기</span></div>
+      <ul id="posts-list" class="post-list"></ul>
+      <p id="posts-empty" class="empty">글 목록을 불러오는 중이에요.</p>
+    </section>
+    <section id="works-panel" role="tabpanel" aria-labelledby="works-tab" tabindex="0" aria-busy="true" hidden>
+      <div class="list-heading"><h2>작품 둘러보기</h2><div class="filter"><label for="kind">작품 종류</label><select id="kind"><option value="">전체</option></select></div></div>
+      <ul id="works-list" class="work-list"></ul>
+      <p id="works-empty" class="empty">작품 목록을 불러오는 중이에요.</p>
+    </section>
+    <noscript><p class="empty">목록을 보려면 자바스크립트를 켜주세요. <a href="https://goal-lit.soulbound.co.kr/">Goal Lit 사이트로 이동</a></p></noscript>
+  </main>
+  <footer>Goal Lit <span aria-hidden="true">/</span> 읽고, 발견하고, 이어가다.</footer>
+</body>
+</html>
