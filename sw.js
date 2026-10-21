@@ -1,6 +1,6 @@
 "use strict";
 const PREFIX = "goal-lit-";
-const SHELL = `${PREFIX}shell-v1`;
+const SHELL = `${PREFIX}shell-v2`;
 const FEEDS = `${PREFIX}feed-v1`;
 const FEED = "https://goal-lit.soulbound.co.kr/api/feed.json";
 const ROOT = new URL("./", self.location.href).href;
